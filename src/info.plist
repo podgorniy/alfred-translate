@@ -17,6 +17,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>E59094FA-7C50-4B18-8B4D-518D96B0966F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>94EED11C-93A9-4FF4-8F28-14E546743485</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Dmitry Podgorniy</string>
@@ -71,6 +82,31 @@ print translate.translate_suggestions('{query}')</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>hotkey</key>
+				<integer>17</integer>
+				<key>hotmod</key>
+				<integer>393216</integer>
+				<key>hotstring</key>
+				<string>T</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>E59094FA-7C50-4B18-8B4D-518D96B0966F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -86,8 +122,13 @@ print translate.translate_suggestions('{query}')</string>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
+		<key>E59094FA-7C50-4B18-8B4D-518D96B0966F</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/podgorniy/alfred-translate</string>
 </dict>
 </plist>
