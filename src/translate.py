@@ -25,7 +25,7 @@ def translate(text):
 		'key': api_key,
 		'lang': get_translation_direction(text),
 		'text': text,
-		'flags': 8
+		'flags': 4
 	}
 	request = urllib2.urlopen('https://dictionary.yandex.net/api/v1/dicservice.json/lookup', urllib.urlencode(params))
 	response_json = json.loads(request.read())
