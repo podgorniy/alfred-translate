@@ -42,34 +42,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>keyword</key>
-				<string>t</string>
-				<key>script</key>
-				<string>import translate
-print translate.translate_suggestions('{query}')</string>
-				<key>subtext</key>
-				<string>en-ru, ru-en</string>
-				<key>title</key>
-				<string>Translate</string>
-				<key>type</key>
-				<integer>3</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>94EED11C-93A9-4FF4-8F28-14E546743485</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>autopaste</key>
 				<false/>
 				<key>clipboardtext</key>
@@ -107,6 +79,36 @@ print translate.translate_suggestions('{query}')</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>t</string>
+				<key>runningsubtext</key>
+				<string>Перевожу / translating</string>
+				<key>script</key>
+				<string>import translate
+print translate.translate_suggestions('{query}')</string>
+				<key>subtext</key>
+				<string>en-ru, ru-en</string>
+				<key>title</key>
+				<string>Translate</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>94EED11C-93A9-4FF4-8F28-14E546743485</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -115,17 +117,17 @@ print translate.translate_suggestions('{query}')</string>
 		<key>79F3A2E6-D920-4115-8809-094B5B6170A3</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
+			<real>70</real>
 		</dict>
 		<key>94EED11C-93A9-4FF4-8F28-14E546743485</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
+			<real>70</real>
 		</dict>
 		<key>E59094FA-7C50-4B18-8B4D-518D96B0966F</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
+			<real>70</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
