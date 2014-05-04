@@ -52,6 +52,7 @@ def get_translation(text):
 
 def translate_suggestions(text):
 	fb = feedback.Feedback()
+	text = text.strip()
 	if is_word(text):
 		vocabulary_articles = get_vocabulary_article(text)
 		for article in vocabulary_articles['def']:
