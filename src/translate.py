@@ -8,6 +8,7 @@ import feedback
 dict_api_key = 'dict.1.1.20140108T003739Z.52c324b8a4eea3ac.5767100e8cc7b997dad88353e47aa4857e786beb'
 translate_api_key = 'trnsl.1.1.20130512T104455Z.8a0ed400b0d249ba.48af47e72f40c8991e4185556b825273d104af68'
 
+
 def is_ascii(s):
 	"""http://stackoverflow.com/questions/196345/how-to-check-if-a-string-in-python-is-in-ascii"""
 	return all(ord(c) < 128 for c in s)
@@ -40,6 +41,7 @@ def get_vocabulary_article(word):
 
 
 def get_translation(text):
+	"""Returns object with translations from API"""
 	params = {
 		'key': translate_api_key,
 		'lang': get_translation_direction(text),
@@ -51,8 +53,8 @@ def get_translation(text):
 
 
 def translate_suggestions(text):
+	"""Returns XML with translate suggestions"""
 	fb = feedback.Feedback()
-	text = text.strip()
 	if is_word(text):
 		vocabulary_articles = get_vocabulary_article(text)
 		for article in vocabulary_articles['def']:
@@ -62,4 +64,29 @@ def translate_suggestions(text):
 		translation_variants = get_translation(text)
 		for translation in translation_variants['text']:
 			fb.add_item(title=translation, arg=translation)
+	return fb
+
+
+def get_spelling_suggestions(text):
+	"""Returns False, if there is no spelling suggestions. Tries to suggest only for words"""
+	if is_word(text):
+		params = {
+			'text': text
+		}
+		request = urllib2.urlopen('http://speller.yandex.net/services/spellservice.json/checkText', urllib.urlencode(params))
+		json_response = json.loads(request.read())
+		if json_response and json_response[0]:
+			return json_response[0]['s']
+		else:
+			return False
+	else:
+		return False
+
+
+def spelling_suggestions(suggested):
+	"""Accepts spelling suggestions as argument, and returns XMXL with suggestions"""
+	fb = feedback.Feedback()
+	if suggested:
+		for spelling_variant in suggested:
+			fb.add_item(title=spelling_variant, autocomplete=spelling_variant)
 	return fb
