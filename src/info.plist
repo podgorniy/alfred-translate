@@ -17,6 +17,8 @@
 				<integer>262144</integer>
 				<key>modifiersubtext</key>
 				<string>Search/поиск</string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
@@ -25,6 +27,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>E59094FA-7C50-4B18-8B4D-518D96B0966F</key>
@@ -36,6 +40,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 	</dict>
@@ -52,6 +58,8 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
 				<key>searcher</key>
 				<integer>1635215215</integer>
 			</dict>
@@ -60,7 +68,7 @@
 			<key>uid</key>
 			<string>7F6DE136-5E1D-4A3A-84E8-269B076CE825</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -69,6 +77,10 @@
 				<integer>0</integer>
 				<key>argument</key>
 				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
 				<key>hotkey</key>
 				<integer>17</integer>
 				<key>hotmod</key>
@@ -87,15 +99,17 @@
 			<key>uid</key>
 			<string>E59094FA-7C50-4B18-8B4D-518D96B0966F</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>0</integer>
+				<integer>4</integer>
 				<key>keyword</key>
 				<string>t</string>
 				<key>queuedelaycustom</key>
@@ -110,11 +124,12 @@
 				<string>Перевожу / translating</string>
 				<key>script</key>
 				<string>import translate
-suggested = translate.get_spelling_suggestions('{query}')
-if suggested:
-	print translate.spelling_suggestions(suggested)
-else:
-	print translate.translate_suggestions('{query}')</string>
+print translate.get_output("{query}")
+</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
 				<key>subtext</key>
 				<string>en-ru, ru-en</string>
 				<key>title</key>
@@ -129,7 +144,7 @@ else:
 			<key>uid</key>
 			<string>94EED11C-93A9-4FF4-8F28-14E546743485</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -138,13 +153,15 @@ else:
 				<false/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
 			<string>ECA3047F-8C4F-4C35-AA1F-36F3E4FF3ADD</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -153,21 +170,29 @@ else:
 	<dict>
 		<key>7F6DE136-5E1D-4A3A-84E8-269B076CE825</key>
 		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
 		<key>94EED11C-93A9-4FF4-8F28-14E546743485</key>
 		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
 			<key>ypos</key>
 			<real>70</real>
 		</dict>
 		<key>E59094FA-7C50-4B18-8B4D-518D96B0966F</key>
 		<dict>
+			<key>xpos</key>
+			<integer>100</integer>
 			<key>ypos</key>
 			<real>70</real>
 		</dict>
 		<key>ECA3047F-8C4F-4C35-AA1F-36F3E4FF3ADD</key>
 		<dict>
+			<key>xpos</key>
+			<integer>700</integer>
 			<key>ypos</key>
 			<real>190</real>
 		</dict>
