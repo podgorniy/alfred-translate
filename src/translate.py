@@ -6,6 +6,7 @@ import json
 import feedback
 from multiprocessing import Pool
 import re
+import sys
 
 dict_api_key = 'dict.1.1.20140108T003739Z.52c324b8a4eea3ac.5767100e8cc7b997dad88353e47aa4857e786beb'
 translate_api_key = 'trnsl.1.1.20130512T104455Z.8a0ed400b0d249ba.48af47e72f40c8991e4185556b825273d104af68'
@@ -155,3 +156,5 @@ def get_output(input_string):
 	for formatted_translated_suggestion in formated_translation_suggestions:
 		fb.add_item(title=formatted_translated_suggestion['translation'], arg=formatted_translated_suggestion['translation'], subtitle=formatted_translated_suggestion['transcription'])
 	return fb
+
+print get_output(sys.argv[1])
