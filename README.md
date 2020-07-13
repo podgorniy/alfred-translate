@@ -35,6 +35,10 @@
 
 ## Changelog
 
+**2020.06.13**
+
+- Исправлена [экранизация пробелов](https://github.com/podgorniy/alfred-translate/issues/10).
+
 **2019.06.27**
 
 - Подхватываются настройки прокси из `.bashrc`
