@@ -1,3 +1,9 @@
+# !!! Плагин перестал работать ([тикет](https://github.com/podgorniy/alfred-translate/issues/11)), я разбираюсь с проблемой
+
+А пока вы можете подключить свои ключи для доступа к API по этой [Инструкции](https://github.com/podgorniy/alfred-translate/issues/11#issuecomment-675882840)
+
+----
+
 # RU-EN EN-RU Translating Alfred Workflow
 
 [Скачать](https://github.com/podgorniy/alfred-translate/raw/master/Translate.alfredworkflow)
