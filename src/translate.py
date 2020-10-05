@@ -54,10 +54,10 @@ def get_spelling_suggestions(spelling_suggestions):
 
 
 
-def get_translation_suggestions(input_string, spelling_suggestions, translation_suggestions, vocabulary_article):
+def get_translation_suggestions(input_string, spelling_suggestions, vocabulary_article):
 	"""Returns XML with translate suggestions"""
 	res = []
-	if len(spelling_suggestions) == 0 and len(translation_suggestions) == 0:
+	if len(spelling_suggestions) == 0 and len(vocabulary_article) == 0:
 		return res
 
 	if len(vocabulary_article['def']) != 0:
@@ -73,14 +73,7 @@ def get_translation_suggestions(input_string, spelling_suggestions, translation_
 					'translation': translation['text'],
 					'transcription': subtitle,
 				})
-	if len(res) == 0:
-		if translation_suggestions and len(translation_suggestions['text']) != 0:
-			for translation in translation_suggestions['text']:
-				if translation != input_string.decode('utf-8'):
-					res.append({
-						'translation': translation.replace('\\ ', ' '), # otherwise prints slash before spaces
-						'transcription': ''
-					})
+
 	return res
 
 
@@ -121,22 +114,15 @@ def get_output(input_string):
 	}
 	articleUrl = 'https://dictionary.yandex.net/api/v1/dicservice.json/lookup' + '?' + urllib.urlencode(articleParams)
 
-	# Build translation url
-	translationParams = {
-		'key': translate_api_key,
-		'lang': translationDirection,
-		'text': input_string
-	}
-	translationUrl = 'https://translate.yandex.net/api/v1.5/tr.json/translate' + '?' + urllib.urlencode(translationParams)
 
 	# Making requests in parallel
-	requestsUrls = [spellCheckUrl, translationUrl, articleUrl]
+	requestsUrls = [spellCheckUrl, articleUrl]
 	responses = pool.map(process_response_as_json, requestsUrls)
 
 	spelling_suggestions_items = get_spelling_suggestions(responses[0])
 	# Generate possible xml outputs
 	formatted_spelling_suggestions = convert_spelling_suggestions(spelling_suggestions_items)
-	formated_translation_suggestions = get_translation_suggestions(input_string, spelling_suggestions_items, responses[1], responses[2])
+	formated_translation_suggestions = get_translation_suggestions(input_string, spelling_suggestions_items, responses[1])
 	words_in_phase = len(re.split(' ', input_string.decode('utf-8')))
 
 	# Output
