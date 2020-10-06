@@ -1,4 +1,4 @@
-# !!! Плагин перестал работать ([тикет](https://github.com/podgorniy/alfred-translate/issues/11)), я разбираюсь с проблемой
+# !!! Старая версия плагина перестала работать (до 2020.10.06). Новая версия работает благодаря [denisborovikov](https://github.com/denisborovikov). Ее нужно [скачать](https://github.com/podgorniy/alfred-translate/raw/master/Translate.alfredworkflow) и заново установить.
 
 ----
 
@@ -38,6 +38,10 @@
 - [AlfredGoogleTranslateWorkflow](https://github.com/thomashempel/AlfredGoogleTranslateWorkflow)
 
 ## Changelog
+
+**2020.10.06
+
+- [denisborovikov](https://github.com/denisborovikov) убрал запрос к неработающему API yandex, и плагин снова работает.
 
 **2020.06.13**
 
