@@ -1,10 +1,8 @@
-# !!! Старая версия плагина перестала работать (до 2020.10.06). Новая версия работает благодаря [denisborovikov](https://github.com/denisborovikov). Ее нужно [скачать](https://github.com/podgorniy/alfred-translate/raw/master/Translate.alfredworkflow) и заново установить.
-
-----
-
 # RU-EN EN-RU Translating Alfred Workflow
 
 [Скачать](https://github.com/podgorniy/alfred-translate/raw/master/Translate.alfredworkflow)
+> Работает с версией macOs 12.4 и выше
+> Работа на более поздних версиях подразумевает использования python3 
 
 Удобный перевод текстов в en-ru ru-en направлениях.
 
